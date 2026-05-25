@@ -7,8 +7,8 @@ import pandas as pd
 # ==========================================
 st.set_page_config(page_title="Link Portal", layout="centered")
 
-ADMIN_USER = "admin"
-ADMIN_PASS = "admin123"
+ADMIN_USER = "mpk"
+ADMIN_PASS = "persibjuara"
 
 # ==========================================
 # Database Initialization & Helpers
