@@ -132,7 +132,7 @@ if st.session_state.admin_logged_in:
     st.subheader("Manage Links")
     
     # 1. SEARCH FUNCTIONALITY (ADMIN)
-    search_query = st.text_input("🔍 Search links by title...", key="admin_search")
+    search_query = st.text_input("🔍 Cari Unit Kerja...", key="admin_search")
     
     links_df = get_all_links()
     
@@ -189,7 +189,7 @@ else:
     st.write("Silahkan klik link sesuai dengan Unit Kerja Bapak/Ibu dan masukkan password yang telah diberikan admin")
     
     # 3. SEARCH FUNCTIONALITY (GUEST)
-    search_query = st.text_input("🔍 Search resources...", key="guest_search")
+    search_query = st.text_input("🔍 Cari Unit Kerja...", key="guest_search")
     st.divider()
     
     active_links = get_active_links()
