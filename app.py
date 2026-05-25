@@ -169,7 +169,8 @@ if st.session_state.admin_logged_in:
                         edit_url = st.text_input("URL", value=row['target_url'])
                         edit_pwd = st.text_input("Password", value=row['password'] if row['password'] else "", type="password")
                         if st.form_submit_button("Save Changes"):
-                            update_link(row['id'], edit_title, edit_url, edit_pwd)
+                            clean_edit_url = format_url(edit_url)
+                            update_link(row['id'], edit_title, clean_edit_url, edit_pwd)
                             st.rerun()
                     
                     # Status Toggle
