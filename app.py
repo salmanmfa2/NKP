@@ -74,6 +74,12 @@ def get_active_links():
     df = pd.read_sql_query('SELECT * FROM links WHERE is_active = 1', conn)
     conn.close()
     return df
+    
+def format_url(url):
+    """Ensures the URL starts with http:// or https://"""
+    if not url.startswith(("http://", "https://")):
+        return f"https://{url}"
+    return url
 
 init_db()
 
@@ -123,7 +129,9 @@ if st.session_state.admin_logged_in:
             
             if st.form_submit_button("Save Link"):
                 if title and target_url:
-                    add_link(title, target_url, password)
+                    # Automatically add https:// if missing
+                    clean_url = format_url(target_url) 
+                    add_link(title, clean_url, password)
                     st.success(f"Link '{title}' added!")
                     st.rerun()
                 else:
