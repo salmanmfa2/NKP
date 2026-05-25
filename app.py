@@ -113,7 +113,7 @@ if st.session_state.admin_logged_in:
     # --------------------------------------
     # ADMIN VIEW
     # --------------------------------------
-    st.title("🛠️ Admin Dashboard")
+    st.title("🛠️ Upload NKP -  Administrator")
     
     with st.expander("➕ Add New Link"):
         with st.form("add_link_form", clear_on_submit=True):
@@ -185,8 +185,8 @@ else:
     # --------------------------------------
     # GUEST VIEW
     # --------------------------------------
-    st.title("🔗 Link Portal")
-    st.write("Welcome! Here are the available resources.")
+    st.title("🔗 Upload NKP - Guest")
+    st.write("Silahkan klik link sesuai dengan Unit Kerja Bapak/Ibu dan masukkan password yang telah diberikan admin")
     
     # 3. SEARCH FUNCTIONALITY (GUEST)
     search_query = st.text_input("🔍 Search resources...", key="guest_search")
@@ -213,7 +213,7 @@ else:
                                 st.success("Access Granted!")
                                 st.link_button(f"Go to {row['title']}", row['target_url'], type="primary", use_container_width=True)
                             else:
-                                st.error("Incorrect Password.")
+                                st.error("Incorrect Password")
                 else:
                     # Public link: Standard button
                     st.link_button(f"🔗 {row['title']}", row['target_url'], use_container_width=False)
