@@ -105,8 +105,8 @@ if st.session_state.admin_logged_in:
     
     st.subheader("Add New Link")
     with st.form("add_link_form", clear_on_submit=True):
-        title = st.text_input("Link Title", required=True)
-        target_url = st.text_input("Target URL (e.g., https://example.com)", required=True)
+        title = st.text_input("Link Title")
+        target_url = st.text_input("Target URL (e.g., https://example.com)")
         password = st.text_input("Password (Optional - leave blank for public link)", type="password")
         
         submitted = st.form_submit_button("Save Link")
